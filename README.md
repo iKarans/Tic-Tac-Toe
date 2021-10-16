@@ -1,3 +1,3 @@
 # Tic-Tac-Toe
 
-Put knowledge gained through tutorial to practice.
+Put knowledge gained through c++ tutorial to practice.

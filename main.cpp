@@ -40,21 +40,23 @@ class Game
                 return false;
             }
         void game()
-            while()
             {
-                print_board();
-                int choice;
-                std::cout << "Choose a Number: ";
-                std::cin >> choice;
-                if(playerOneTurn)
+                while (!check_winner() && rounds < 9)
                 {
-                    board[(choice - 1) / 3][(choice - 1) % 3] = "X";
-                } 
-                else 
-                {
-                    board[(choice - 1) / 3][(choice - 1) % 3] = "O";
-                }
-                playerOneTurn = !playerOneTurn;
-                rounds++;         
+                    print_board();
+                    int choice;
+                    std::cout << "Choose a Number: ";
+                    std::cin >> choice;
+                    if(playerOneTurn)
+                    {
+                        board[(choice - 1) / 3][(choice - 1) % 3] = "X";
+                    } 
+                    else 
+                    {
+                        board[(choice - 1) / 3][(choice - 1) % 3] = "O";
+                    }
+                    playerOneTurn = !playerOneTurn;
+                    rounds++;   
+                };      
             };
 };

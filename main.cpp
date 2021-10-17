@@ -57,6 +57,21 @@ class Game
                     }
                     playerOneTurn = !playerOneTurn;
                     rounds++;   
-                };      
+                };
+                print_board();
+                if (!playerOneTurn)
+                {
+                    std::cout << "Congratulations Player X!";
+                }
+                else
+                {
+                    std::cout << "Congratulations Player O!";
+                }     
             };
 };
+
+int main()
+{
+    Game game;
+    game.game();
+}

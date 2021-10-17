@@ -26,7 +26,7 @@ class Game
                 };
                 for (int i = 0; i < 3; i++)
                 {
-                    if (board[i][0] == board[i][1] && board[i][1] == board[i][2])
+                    if (board[0][i] == board[1][i] && board[1][i] == board[2][i])
                     {
                         return true;
                     };
@@ -57,14 +57,18 @@ class Game
                 playerOneTurn = !playerOneTurn;
                 rounds++; 
             };
-            if(!playerOneTurn)
+            print_board();
+            if(rounds < 9)
             {
-                std::cout << "Congratulations Player X!";
-            }
-            else
-            {
-                std::cout << "Congratulations Player O!";
-            }     
+                if(!playerOneTurn)
+                {
+                    std::cout << "Congratulations Player X!";
+                }
+                else
+                {
+                    std::cout << "Congratulations Player O!";
+                }    
+            } 
         };
 };
 

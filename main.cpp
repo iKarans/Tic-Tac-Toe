@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-
 class Game
 {
     public:
@@ -40,38 +39,37 @@ class Game
                 return false;
             }
         void game()
+        {
+            while(!check_winner() && rounds < 9)
             {
-                while (!check_winner() && rounds < 9)
-                {
-                    print_board();
-                    int choice;
-                    std::cout << "Choose a Number: ";
-                    std::cin >> choice;
-                    if(playerOneTurn)
-                    {
-                        board[(choice - 1) / 3][(choice - 1) % 3] = "X";
-                    } 
-                    else 
-                    {
-                        board[(choice - 1) / 3][(choice - 1) % 3] = "O";
-                    }
-                    playerOneTurn = !playerOneTurn;
-                    rounds++;   
-                };
                 print_board();
-                if (!playerOneTurn)
+                int choice;
+                std::cout << "Choose a Number: ";
+                std::cin >> choice;
+                if(playerOneTurn)
                 {
-                    std::cout << "Congratulations Player X!";
+                    board[(choice - 1) / 3][(choice - 1) % 3] = "X";
+                } 
+                else 
+                {
+                    board[(choice - 1) / 3][(choice - 1) % 3] = "O";
                 }
-                else
-                {
-                    std::cout << "Congratulations Player O!";
-                }     
+                playerOneTurn = !playerOneTurn;
+                rounds++; 
             };
+            if(!playerOneTurn)
+            {
+                std::cout << "Congratulations Player X!";
+            }
+            else
+            {
+                std::cout << "Congratulations Player O!";
+            }     
+        };
 };
 
 int main()
 {
     Game game;
     game.game();
-}
+};
